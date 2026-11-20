@@ -11,7 +11,11 @@ app/legocmd/.lego/
 .vscode/launch.json
 example/.lego
 example/cert
+node/1.key
+node/1.pem
+node/cert/*
 ./vscode
+build_assets/*
 output/*
 .idea/*
 newV2bX.sh
