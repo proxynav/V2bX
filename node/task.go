@@ -3,10 +3,10 @@ package node
 import (
 	"time"
 
-	"github.com/InazumaV/V2bX/api/panel"
-	"github.com/InazumaV/V2bX/common/task"
-	vCore "github.com/InazumaV/V2bX/core"
-	"github.com/InazumaV/V2bX/limiter"
+	"github.com/proxynav/V2bX/api/panel"
+	"github.com/proxynav/V2bX/common/task"
+	vCore "github.com/proxynav/V2bX/core"
+	"github.com/proxynav/V2bX/limiter"
 	log "github.com/sirupsen/logrus"
 )
 

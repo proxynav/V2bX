@@ -21,7 +21,7 @@ These mechanisms have different versioning and update procedures. They must be r
 The repository currently declares:
 
 ```go
-module github.com/InazumaV/V2bX
+module github.com/proxynav/V2bX
 
 go 1.25
 
@@ -481,7 +481,7 @@ GOEXPERIMENT=jsonv2 go build \
   -o build_assets/V2bX \
   -tags "sing xray hysteria2 with_quic with_grpc with_utls with_wireguard with_acme with_gvisor" \
   -trimpath \
-  -ldflags "-X 'github.com/InazumaV/V2bX/cmd.version=$version' -s -w -buildid="
+  -ldflags "-X 'github.com/proxynav/V2bX/cmd.version=$version' -s -w -buildid="
 ```
 
 Also test any reduced build configurations affected by the dependency change.

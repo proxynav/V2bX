@@ -1,4 +1,4 @@
-module github.com/InazumaV/V2bX
+module github.com/proxynav/V2bX
 
 go 1.25
 

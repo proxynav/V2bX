@@ -117,7 +117,7 @@ Before building V2bX, understand the following project-specific settings.
 The current `go.mod` declares:
 
 ```go
-module github.com/InazumaV/V2bX
+module github.com/proxynav/V2bX
 
 go 1.25
 
@@ -129,7 +129,7 @@ The module path is inherited from the original project and is currently differen
 This distinction is intentional in the current development setup:
 
 - Git clone URL: `github.com/proxynav/V2bX`
-- Current Go module path: `github.com/InazumaV/V2bX`
+- Current Go module path: `github.com/proxynav/V2bX`
 
 Do not independently rewrite the module path or internal imports during ordinary development.
 
@@ -353,7 +353,7 @@ GOEXPERIMENT=jsonv2 go build -v \
   -o build_assets/V2bX \
   -tags "sing xray hysteria2 with_quic with_grpc with_utls with_wireguard with_acme with_gvisor" \
   -trimpath \
-  -ldflags "-X 'github.com/InazumaV/V2bX/cmd.version=$version' -s -w -buildid="
+  -ldflags "-X 'github.com/proxynav/V2bX/cmd.version=$version' -s -w -buildid="
 ```
 
 Set `version` before running the command if you want to inject a version string:
@@ -491,7 +491,7 @@ Do not disable CGO without first verifying that the selected dependencies suppor
 The current module path is inherited from the original repository:
 
 ```text
-github.com/InazumaV/V2bX
+github.com/proxynav/V2bX
 ```
 
 Do not automatically replace it with:

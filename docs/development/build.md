@@ -148,7 +148,7 @@ GOEXPERIMENT=jsonv2 go build -v \
   -o build_assets/V2bX \
   -tags "sing xray hysteria2 with_quic with_grpc with_utls with_wireguard with_acme with_gvisor" \
   -trimpath \
-  -ldflags "-X 'github.com/InazumaV/V2bX/cmd.version=$version' -s -w -buildid="
+  -ldflags "-X 'github.com/proxynav/V2bX/cmd.version=$version' -s -w -buildid="
 ```
 
 This command follows the build configuration documented in the repository README.
@@ -473,7 +473,7 @@ Compare the actual build command with the intended deployment configuration.
 The current README uses:
 
 ```text
-github.com/InazumaV/V2bX/cmd.version
+github.com/proxynav/V2bX/cmd.version
 ```
 
 This is based on the module path and version variable in the current source.

@@ -450,7 +450,7 @@ GOEXPERIMENT=jsonv2 go build \
   -o build_assets/V2bX \
   -tags "sing xray hysteria2 with_quic with_grpc with_utls with_wireguard with_acme with_gvisor" \
   -trimpath \
-  -ldflags "-X 'github.com/InazumaV/V2bX/cmd.version=$version' -s -w -buildid="
+  -ldflags "-X 'github.com/proxynav/V2bX/cmd.version=$version' -s -w -buildid="
 ```
 
 ### 6.2 Core-specific build validation
@@ -855,7 +855,7 @@ go build \
   -o build_assets/V2bX \
   -tags "sing xray hysteria2 with_quic with_grpc with_utls with_wireguard with_acme with_gvisor" \
   -trimpath \
-  -ldflags "-X 'github.com/InazumaV/V2bX/cmd.version=$version' -s -w -buildid="
+  -ldflags "-X 'github.com/proxynav/V2bX/cmd.version=$version' -s -w -buildid="
 ```
 
 The `go mod tidy` step should be run in a clean working tree. It is a validation step: unexpected modifications should fail the check and be reviewed.
