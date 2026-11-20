@@ -77,6 +77,8 @@ GOEXPERIMENT=jsonv2 go build -v -o build_assets/V2bX -tags "sing xray hysteria2 
 
 ## Thanks
 
+* [InazumaV/V2bX](https://github.com/InazumaV/V2bX)
+* [wyx2685/V2bX](https://github.com/wyx2685/V2bX)
 * [Project X](https://github.com/XTLS/)
 * [V2Fly](https://github.com/v2fly)
 * [VNet-V2ray](https://github.com/ProxyPanel/VNet-V2ray)
