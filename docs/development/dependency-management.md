@@ -32,6 +32,27 @@ toolchain go1.25.0
 
 A module path migration is a separate project-wide change and must update all affected imports, build configuration, documentation, and release workflows together.
 
+### 1.1.  sing-box_mod Upstream Baseline
+
+The `sing-box_mod` repository is based on the official SagerNet sing-box project, with its upstream baseline identified as:
+
+- **Upstream repository:** `https://github.com/SagerNet/sing-box`
+- **Baseline tag:** `v1.13.0-beta.6`
+- **Baseline commit:** `5ae743628555b8af13b3fa6a63d082d8740df930`
+- **Fork base commit:** `0f5cda4169998eb4a485b67707b77b9384406a5f
+
+The baseline relationship has been verified using Git ancestry checks.
+
+All future `sing-box_mod` audits and migration work should compare the fork against this baseline to distinguish:
+
+- Features already present in official sing-box
+- V2bX-specific modifications
+- Changes that should be extracted into V2bX-owned packages
+- Changes that may be upstreamed
+- Changes that can be removed
+
+The long-term objective is to eliminate the dependency on `sing-box_mod` and use official sing-box directly, keeping V2bX-specific functionality isolated from upstream code wherever possible.
+
 ## 2. Dependency Categories
 
 ### 2.1 Direct Go dependencies
