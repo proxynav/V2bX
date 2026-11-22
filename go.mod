@@ -16,7 +16,6 @@ require (
 	github.com/spf13/cobra v1.10.2
 	github.com/spf13/viper v1.19.0
 	github.com/vmihailenco/msgpack/v5 v5.4.1
-	//github.com/xtls/xray-core v1.251202.0
 	go.uber.org/zap v1.27.1
 	golang.org/x/crypto v0.54.0
 	golang.org/x/sys v0.47.0
@@ -345,5 +344,3 @@ require (
 )
 
 replace github.com/sagernet/sing-box v1.13.0 => github.com/proxynav/sing-box-patch v1.13.0-patch.3
-
-//replace github.com/xtls/xray-core v1.251202.0 => github.com/proxynav/xray-core v0.0.0-20251202200223-63db1dc9e9e2
