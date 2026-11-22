@@ -67,7 +67,6 @@ The current dependency set includes important components such as:
 | `github.com/apernet/hysteria/extras/v2` | Hysteria supporting functionality    |
 | `github.com/sagernet/sing`              | sing-related functionality           |
 | `github.com/sagernet/sing-box`          | sing-box core                        |
-| `github.com/xtls/xray-core`             | Xray core                            |
 | `github.com/go-acme/lego/v4`            | ACME certificate automation          |
 | `github.com/go-resty/resty/v2`          | HTTP client functionality            |
 | `github.com/spf13/cobra`                | CLI framework                        |
@@ -288,23 +287,7 @@ Some dependencies have a much greater impact on application behavior than ordina
 
 Changes to these components require additional testing.
 
-### 6.1 Xray Core
-
-Dependency:
-
-```text
-github.com/xtls/xray-core
-```
-
-Before upgrading Xray Core, verify:
-
-- Existing node protocol implementations still compile.
-- Configuration structures and API usage remain compatible.
-- TLS, Reality, transport, and other supported features work as expected.
-- Existing connection and traffic-limit behavior is unaffected.
-- The Xray-enabled build succeeds.
-
-### 6.2 sing-box
+### 6.1 sing-box
 
 Dependency:
 
@@ -322,7 +305,7 @@ Before upgrading sing-box, verify:
 
 The project also contains the `sing-box_mod` Git submodule. Changes to the Go module version and changes to the submodule revision must be reviewed together when they affect the same integration.
 
-### 6.3 Hysteria
+### 6.2 Hysteria
 
 Dependencies:
 
@@ -339,7 +322,7 @@ Before upgrading Hysteria, verify:
 - QUIC-related build and runtime behavior.
 - Compatibility with the project's Hysteria node configuration.
 
-### 6.4 ACME and certificate dependencies
+### 6.3 ACME and certificate dependencies
 
 Dependency:
 
@@ -357,7 +340,7 @@ Before upgrading ACME-related modules, verify:
 
 ACME integrations may pull in a large number of cloud-provider SDKs. Avoid introducing additional DNS provider dependencies unless the functionality is actually needed.
 
-### 6.5 Logging and configuration libraries
+### 6.4 Logging and configuration libraries
 
 The current dependency set includes both Logrus and Zap, as well as Cobra and Viper.
 
@@ -500,7 +483,7 @@ mkdir -p build_assets
 GOEXPERIMENT=jsonv2 go build \
   -v \
   -o build_assets/V2bX \
-  -tags "sing xray hysteria2 with_quic with_grpc with_utls with_wireguard with_acme with_gvisor" \
+  -tags "sing hysteria2 with_quic with_grpc with_utls with_wireguard with_acme with_gvisor" \
   -trimpath \
   -ldflags "-X 'github.com/proxynav/V2bX/cmd.version=$version' -s -w -buildid="
 ```
@@ -581,7 +564,7 @@ A dependency update pull request should contain:
 
 Avoid combining unrelated dependency updates with protocol features, configuration refactoring, or other functional changes.
 
-For major upgrades to Xray, sing-box, Hysteria, or ACME components, consider separate pull requests or a clearly documented coordinated upgrade.
+For major upgrades to sing-box, Hysteria, or ACME components, consider separate pull requests or a clearly documented coordinated upgrade.
 
 ## 12. Rollback Procedure
 

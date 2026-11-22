@@ -43,7 +43,6 @@ Guides and references for contributors and developers.
 Documentation about supported proxy cores and how to extend core integrations.
 
 - [Core Overview](cores/overview.md) — Supported cores and their responsibilities.
-- [Xray Core](cores/xray.md) — Xray integration and implementation details.
 - [sing-box Core](cores/sing-box.md) — sing-box integration and implementation details.
 - [Adding a New Core](cores/adding-a-new-core.md) — Guide to implementing a new proxy core.
 

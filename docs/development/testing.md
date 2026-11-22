@@ -368,7 +368,7 @@ Recommended test cases:
 - Core-specific error propagation.
 - Compatibility with enabled build tags.
 
-Special attention should be given to differences between Xray, sing-box, and Hysteria2 integrations.
+Special attention should be given to differences between sing-box, and Hysteria2 integrations.
 
 ### 5.5 Node implementations
 
@@ -421,7 +421,6 @@ The current documented full build uses:
 ```text
 Core tags:
 - sing
-- xray
 - hysteria2
 
 Optional feature tags:
@@ -448,7 +447,7 @@ mkdir -p build_assets
 GOEXPERIMENT=jsonv2 go build \
   -v \
   -o build_assets/V2bX \
-  -tags "sing xray hysteria2 with_quic with_grpc with_utls with_wireguard with_acme with_gvisor" \
+  -tags "sing hysteria2 with_quic with_grpc with_utls with_wireguard with_acme with_gvisor" \
   -trimpath \
   -ldflags "-X 'github.com/proxynav/V2bX/cmd.version=$version' -s -w -buildid="
 ```
@@ -458,12 +457,6 @@ GOEXPERIMENT=jsonv2 go build \
 When modifying a core integration, test the corresponding build configuration.
 
 For example:
-
-```bash
-GOEXPERIMENT=jsonv2 go build \
-  -tags "xray" \
-  ./...
-```
 
 ```bash
 GOEXPERIMENT=jsonv2 go build \
@@ -508,7 +501,6 @@ The following matrix is a recommended starting point:
 | Build target          | Validation                              |
 | --------------------- | --------------------------------------- |
 | Full build            | All documented core and optional tags   |
-| Xray integration      | Xray-related source and build tags      |
 | sing-box integration  | sing-related source and build tags      |
 | Hysteria2 integration | Hysteria2-related source and build tags |
 | QUIC                  | Relevant core plus `with_quic`          |
@@ -669,7 +661,7 @@ When compatibility with third-party clients is important, include at least one r
 The current Dockerfile builds the application using Go 1.25.0 and enables:
 
 ```text
-sing xray hysteria2
+sing hysteria2
 with_quic with_grpc with_utls
 with_wireguard with_acme with_gvisor
 ```
@@ -853,7 +845,7 @@ version="ci"
 go build \
   -v \
   -o build_assets/V2bX \
-  -tags "sing xray hysteria2 with_quic with_grpc with_utls with_wireguard with_acme with_gvisor" \
+  -tags "sing hysteria2 with_quic with_grpc with_utls with_wireguard with_acme with_gvisor" \
   -trimpath \
   -ldflags "-X 'github.com/proxynav/V2bX/cmd.version=$version' -s -w -buildid="
 ```

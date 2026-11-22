@@ -13,7 +13,7 @@ The official project repository is:
 
 All new development, documentation, issues, and pull requests should use the official ProxyNav repository.
 
-The project is written in Go and provides a multi-core proxy node management implementation based on Xray and sing-box.
+The project is written in Go and provides a multi-core proxy node management implementation based on sing-box.
 
 ## 2. Prerequisites
 
@@ -167,7 +167,6 @@ The documented build configuration includes the following tags:
 
 | Tag              | Purpose                                  |
 | ---------------- | ---------------------------------------- |
-| `xray`           | Include Xray core integration            |
 | `sing`           | Include sing-box core integration        |
 | `hysteria2`      | Include Hysteria2-related implementation |
 | `with_quic`      | Enable QUIC-related functionality        |
@@ -351,7 +350,7 @@ mkdir -p build_assets
 
 GOEXPERIMENT=jsonv2 go build -v \
   -o build_assets/V2bX \
-  -tags "sing xray hysteria2 with_quic with_grpc with_utls with_wireguard with_acme with_gvisor" \
+  -tags "sing hysteria2 with_quic with_grpc with_utls with_wireguard with_acme with_gvisor" \
   -trimpath \
   -ldflags "-X 'github.com/proxynav/V2bX/cmd.version=$version' -s -w -buildid="
 ```
