@@ -8,8 +8,8 @@ It is intended for developers investigating build failures, configuration errors
 
 The official project repository is:
 
-- **ProxyNav V2bX:** https://github.com/proxynav/V2bX
-- **Original fork source:** https://github.com/wyx2685/V2bX
+- **ProxyNav V2bX:** <https://github.com/proxynav/V2bX>
+- **Original fork source:** <https://github.com/wyx2685/V2bX>
 
 Use the official ProxyNav repository when reporting issues, submitting pull requests, or referencing project documentation.
 

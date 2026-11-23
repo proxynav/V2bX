@@ -8,8 +8,8 @@ The instructions are based on the current project source and build configuration
 
 The official project repository is:
 
-- **ProxyNav V2bX:** https://github.com/proxynav/V2bX
-- **Original fork source:** https://github.com/wyx2685/V2bX
+- **ProxyNav V2bX:** <https://github.com/proxynav/V2bX>
+- **Original fork source:** <https://github.com/wyx2685/V2bX>
 
 All new development, documentation, issues, and pull requests should use the official ProxyNav repository.
 
