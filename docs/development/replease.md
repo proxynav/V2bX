@@ -48,11 +48,11 @@ Use semantic versioning where applicable:
 
 Release versions should use the `v` prefix, for example:
 
-- `v1.2.0`
-- `v1.2.1`
-- `v1.3.0`
+- `v0.4.0`
+- `v0.4.1`
+- `v0.5.0`
 
-Pre-release versions may use suffixes such as `-beta.1` or `-rc.1`.
+Pre-release versions may use suffixes such as `-alpha.1`,  `-beta.1` or `-rc.1`.
 
 ## 3. Validation and Testing
 
