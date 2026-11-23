@@ -11,8 +11,6 @@ import (
 	"strings"
 	"time"
 
-	"github.com/proxynav/V2bX/api/panel"
-	"github.com/proxynav/V2bX/conf"
 	"github.com/apernet/hysteria/core/v2/server"
 	"github.com/apernet/hysteria/extras/v2/correctnet"
 	"github.com/apernet/hysteria/extras/v2/masq"
@@ -20,6 +18,8 @@ import (
 	"github.com/apernet/hysteria/extras/v2/outbounds"
 	"github.com/apernet/hysteria/extras/v2/sniff"
 	eUtils "github.com/apernet/hysteria/extras/v2/utils"
+	"github.com/proxynav/V2bX/api/panel"
+	"github.com/proxynav/V2bX/conf"
 	"go.uber.org/zap"
 )
 
@@ -141,11 +141,11 @@ func (n *Hysteria2node) getConn(info *panel.NodeInfo, config *conf.Options) (net
 	case "", "plain":
 		return conn, nil
 	case "salamander":
-		ob, err := obfs.NewSalamanderObfuscator([]byte(info.Hysteria2.ObfsPassword))
+		wrappedConn, err := obfs.WrapPacketConnSalamander(conn, []byte(info.Hysteria2.ObfsPassword))
 		if err != nil {
 			return nil, err
 		}
-		return obfs.WrapPacketConn(conn, ob), nil
+		return wrappedConn, nil
 	default:
 		return nil, fmt.Errorf("unsupported obfuscation type")
 	}

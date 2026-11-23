@@ -315,7 +315,6 @@ The project uses build tags to select proxy cores and optional features.
 
 Examples include:
 
-- `xray`
 - `sing`
 - `hysteria2`
 - `with_quic`

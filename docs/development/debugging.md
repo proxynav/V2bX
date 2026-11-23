@@ -65,7 +65,7 @@ The selected build tags can affect which implementations are included in the bin
 
 Inspect the build command and record:
 
-- Enabled proxy core tags, such as `xray`, `sing`, and `hysteria2`.
+- Enabled proxy core tags, such as `sing`, and `hysteria2`.
 - Optional feature tags, such as `with_acme`, `with_quic`, and `with_grpc`.
 - The `GOEXPERIMENT` setting.
 - The Go toolchain version.
@@ -137,7 +137,7 @@ A representative build command is:
 ```bash
 GOEXPERIMENT=jsonv2 go build -v \
   -o build_assets/V2bX \
-  -tags "sing xray hysteria2 with_quic with_grpc with_utls with_wireguard with_acme with_gvisor" \
+  -tags "sing hysteria2 with_quic with_grpc with_utls with_wireguard with_acme with_gvisor" \
   -trimpath \
   -ldflags "-s -w"
 ```
@@ -402,7 +402,7 @@ If V2bX generates configuration for an underlying core, inspect the generated co
 
 Use the configuration validation command supported by the exact core version included in the build.
 
-Do not assume that Xray and sing-box accept the same configuration format or validation flags.
+Do not assume that sing-box accept the same configuration format or validation flags.
 
 When a core configuration fails:
 
@@ -429,7 +429,7 @@ ss -lntup | grep ':443'
 Check running processes:
 
 ```bash
-ps aux | grep -E 'V2bX|xray|sing-box'
+ps aux | grep -E 'V2bX|sing-box'
 ```
 
 A port conflict, incorrect bind address, or insufficient permission can prevent a core from starting.
@@ -776,7 +776,6 @@ https://github.com/proxynav/V2bX/issues
 - [Go Documentation](https://go.dev/doc/)
 - [Go Command Documentation](https://pkg.go.dev/cmd/go)
 - [Delve Debugger](https://github.com/go-delve/delve)
-- [Xray-core](https://github.com/XTLS/Xray-core)
 - [sing-box](https://github.com/SagerNet/sing-box)
 
 ---

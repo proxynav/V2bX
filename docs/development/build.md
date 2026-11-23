@@ -86,7 +86,6 @@ The README identifies these core tags:
 
 | Build tag | Purpose |
 |---|---|
-| `xray` | Include Xray core integration |
 | `sing` | Include sing-box core integration |
 | `hysteria2` | Include Hysteria2-related implementation |
 
@@ -114,7 +113,7 @@ These tags should be kept consistent with the intended deployment and release co
 The current README documents the following full build tag set:
 
 ```text
-sing xray hysteria2 with_quic with_grpc with_utls with_wireguard with_acme with_gvisor
+sing hysteria2 with_quic with_grpc with_utls with_wireguard with_acme with_gvisor
 ```
 
 Use this set when building the full-featured binary described by the project README.
@@ -146,7 +145,7 @@ Build the application:
 ```bash
 GOEXPERIMENT=jsonv2 go build -v \
   -o build_assets/V2bX \
-  -tags "sing xray hysteria2 with_quic with_grpc with_utls with_wireguard with_acme with_gvisor" \
+  -tags "sing hysteria2 with_quic with_grpc with_utls with_wireguard with_acme with_gvisor" \
   -trimpath \
   -ldflags "-X 'github.com/proxynav/V2bX/cmd.version=$version' -s -w -buildid="
 ```
@@ -193,7 +192,7 @@ mkdir -p build_assets
 
 GOEXPERIMENT=jsonv2 go build -v \
   -o build_assets/V2bX-debug \
-  -tags "sing xray hysteria2 with_quic with_grpc with_utls with_wireguard with_acme with_gvisor"
+  -tags "sing hysteria2 with_quic with_grpc with_utls with_wireguard with_acme with_gvisor"
 ```
 
 This produces a binary that is more suitable for debugging.
@@ -206,7 +205,7 @@ For more detailed source-level debugging:
 GOEXPERIMENT=jsonv2 go build \
   -gcflags="all=-N -l" \
   -o build_assets/V2bX-debug \
-  -tags "sing xray hysteria2 with_quic with_grpc with_utls with_wireguard with_acme with_gvisor"
+  -tags "sing hysteria2 with_quic with_grpc with_utls with_wireguard with_acme with_gvisor"
 ```
 
 The compiler flags disable optimizations and inlining to make debugger inspection easier.
@@ -217,15 +216,7 @@ Use this build with Delve when necessary.
 
 For faster development and narrower testing, build only the required core implementation.
 
-For example, an Xray-oriented build:
-
-```bash
-GOEXPERIMENT=jsonv2 go build \
-  -o build_assets/V2bX-xray \
-  -tags "xray"
-```
-
-A sing-box-oriented build:
+For example, A sing-box-oriented build:
 
 ```bash
 GOEXPERIMENT=jsonv2 go build \
@@ -368,7 +359,7 @@ GOOS=linux GOARCH=amd64 \
 GOEXPERIMENT=jsonv2 \
 go build \
   -o build_assets/V2bX-linux-amd64 \
-  -tags "sing xray hysteria2 with_quic with_grpc with_utls with_wireguard with_acme with_gvisor"
+  -tags "sing hysteria2 with_quic with_grpc with_utls with_wireguard with_acme with_gvisor"
 ```
 
 ### 8.3 Example: Linux ARM64
@@ -378,7 +369,7 @@ GOOS=linux GOARCH=arm64 \
 GOEXPERIMENT=jsonv2 \
 go build \
   -o build_assets/V2bX-linux-arm64 \
-  -tags "sing xray hysteria2 with_quic with_grpc with_utls with_wireguard with_acme with_gvisor"
+  -tags "sing hysteria2 with_quic with_grpc with_utls with_wireguard with_acme with_gvisor"
 ```
 
 ### 8.4 CGO Considerations
@@ -464,7 +455,7 @@ Confirm that the submodule is checked out at the revision recorded by the main r
 
 Check the build tags.
 
-A missing `xray`, `sing`, or `hysteria2` tag may exclude the corresponding implementation.
+A missing `sing`, or `hysteria2` tag may exclude the corresponding implementation.
 
 Compare the actual build command with the intended deployment configuration.
 

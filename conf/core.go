@@ -7,7 +7,6 @@ import (
 type CoreConfig struct {
 	Type            string           `json:"Type"`
 	Name            string           `json:"Name"`
-	XrayConfig      *XrayConfig      `json:"-"`
 	SingConfig      *SingConfig      `json:"-"`
 	Hysteria2Config *Hysteria2Config `json:"-"`
 }
@@ -20,9 +19,6 @@ func (c *CoreConfig) UnmarshalJSON(b []byte) error {
 		return err
 	}
 	switch c.Type {
-	case "xray":
-		c.XrayConfig = NewXrayConfig()
-		return json.Unmarshal(b, c.XrayConfig)
 	case "sing":
 		c.SingConfig = NewSingConfig()
 		return json.Unmarshal(b, c.SingConfig)
