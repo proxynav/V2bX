@@ -33,21 +33,25 @@ jobs:
           # Exclude i386 on darwin.
           - goarch: 386
             goos: darwin
+          - goarch: 386
+            goos: linux
+          - goarch: 386
+            goos: windows
         include:
           # BEIGIN MacOS ARM64
           #- goos: darwin
           #  goarch: arm64
           # END MacOS ARM64
           # BEGIN Linux ARM 5 6 7
-          - goos: linux
-            goarch: arm
-            goarm: 7
-          - goos: linux
-            goarch: arm
-            goarm: 6
-          - goos: linux
-            goarch: arm
-            goarm: 5
+          #- goos: linux
+          #  goarch: arm
+          #  goarm: 7
+          #- goos: linux
+          #  goarch: arm
+          #  goarm: 6
+          #- goos: linux
+          #  goarch: arm
+          #  goarm: 5
           # END Linux ARM 5 6 7
           # BEGIN Android ARM 8
           #- goos: android
@@ -169,10 +173,12 @@ jobs:
             openssl dgst -$METHOD $FILE | sed 's/([^)]*)//g' >>$DGST
           done
       - name: Change the name
+        if: github.event_name == 'release'
         run: |
           mv build_assets V2bX-$ASSET_NAME
       - name: Upload files to Artifacts
         uses: actions/upload-artifact@v4
+        if: github.event_name == 'release'
         with:
           name: V2bX-${{ steps.get_filename.outputs.ASSET_NAME }}
           path: |
